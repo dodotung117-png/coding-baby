@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>平安铃 · 子女端管理软件</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>平安铃子女端</h1>
+        <p>远程守护长辈 · 设备管理与告警处置</p>
+      </div>
+      <div class="search-wrap">
+        <input id="deviceSearch" type="search" placeholder="搜索设备名/手机号" />
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card" aria-labelledby="device-title">
+        <div class="card-head">
+          <h2 id="device-title">设备总览</h2>
+          <span id="deviceCount" class="badge"></span>
+        </div>
+        <ul id="deviceList" class="list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="alert-title">
+        <div class="card-head">
+          <h2 id="alert-title">告警中心</h2>
+          <button id="addAlertBtn" class="btn">新增模拟告警</button>
+        </div>
+        <ul id="alertList" class="list"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="geofence-title">
+        <div class="card-head">
+          <h2 id="geofence-title">电子围栏</h2>
+        </div>
+        <div class="fence-box">
+          <p><strong>当前中心位置：</strong><span id="fenceLocation"></span></p>
+          <label for="radiusRange">安全半径：<span id="radiusText"></span> 米</label>
+          <input id="radiusRange" type="range" min="200" max="3000" step="100" />
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="contact-title">
+        <div class="card-head">
+          <h2 id="contact-title">紧急联系人</h2>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <input id="contactName" type="text" placeholder="联系人姓名" required />
+          <input id="contactPhone" type="tel" placeholder="手机号" required />
+          <button type="submit" class="btn">添加联系人</button>
+        </form>
+        <ul id="contactList" class="list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
